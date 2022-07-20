@@ -2,6 +2,9 @@
   "name": "fullstack-ecommerce-website",
   "version": "0.1.0",
   "private": true,
+  "main": "package.json",
+  "author": "Soufianetyk1337 <sz.fanel@gmail.com>",
+  "license": "UNLICENSED",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -9,14 +12,19 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "boxicons": "^2.1.2",
     "next": "12.2.2",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "swiper": "^8.3.1"
   },
   "devDependencies": {
+    "autoprefixer": "^10.4.7",
     "eslint": "8.20.0",
     "eslint-config-next": "12.2.2",
     "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-react": "^7.30.1"
+    "eslint-plugin-react": "^7.30.1",
+    "postcss": "^8.4.14",
+    "tailwindcss": "^3.1.6"
   }
 }
