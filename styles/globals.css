@@ -1,9 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: "Roboto Mono", monospace;
+  /* font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif; */
 }
 
 a {
@@ -13,4 +17,36 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+[class^="icon-"],
+[class*=" icon-"] {
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@layer components {
+  .nav-link {
+    @apply md:inline-flex md:h-full md:items-center md:border-b md:border-transparent md:hover:border-orange-600 md:font-normal md:text-gray-500 transition;
+  }
+  .swiper-slide {
+    @apply block w-full h-full lg:rounded-lg aspect-square;
+  }
+  .swiper-thumb {
+    @apply inline-block aspect-square w-full h-full rounded-lg border-2 border-transparent cursor-pointer active:brightness-110 transition;
+  }
+}
+
+@layer utilities {
+  .active {
+    @apply opacity-50 border-orange-600;
+  }
 }
