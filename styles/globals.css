@@ -19,6 +19,20 @@ a {
   box-sizing: border-box;
 }
 
+.mySwiper .swiper-slide {
+  width: 25%;
+  height: 100%;
+  opacity: 0.4;
+}
+
+.mySwiper .swiper-slide-thumb-active {
+  opacity: 1;
+  border-color: orange;
+}
+.mySwiper .swiper-slide-active {
+  opacity: 1;
+  border-color: orange;
+}
 [class^="icon-"],
 [class*=" icon-"] {
   speak: never;
@@ -47,6 +61,6 @@ a {
 
 @layer utilities {
   .active {
-    @apply opacity-50 border-orange-600;
+    @apply opacity-100 border-orange-600;
   }
 }
