@@ -37,6 +37,19 @@ const product = {
             title: 'Discount',
             type: 'number',
         },
+        {
+            name: 'slug',
+            type: 'slug',
+            title: 'Slug',
+            options: {
+                source: 'name',
+                maxLength: 96,
+                slugify: input => input
+                    .toLowerCase()
+                    .replace(/\s+/g, '-')
+                    .slice(0, 96)
+            }
+        },
     ]
 
 }
