@@ -20,7 +20,6 @@ a {
 }
 
 .mySwiper .swiper-slide {
-  width: 25%;
   height: 100%;
   opacity: 0.4;
 }
@@ -31,7 +30,11 @@ a {
 }
 .mySwiper .swiper-slide-active {
   opacity: 1;
-  border-color: orange;
+  border: 2px solid orange !important;
+}
+.header-gradient {
+  background-color: #f9d29d;
+  background-image: linear-gradient(315deg, #f9d29d 0%, #ffd8cb 74%);
 }
 [class^="icon-"],
 [class*=" icon-"] {
@@ -46,7 +49,16 @@ a {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
 @layer components {
   .nav-link {
     @apply md:inline-flex md:h-full md:items-center md:border-b md:border-transparent md:hover:border-orange-600 md:font-normal md:text-gray-500 transition;
@@ -63,4 +75,7 @@ a {
   .active {
     @apply opacity-100 border-orange-600;
   }
+}
+.header-shadow {
+  filter: drop-shadow(0.25rem 0.25rem 0.5rem #000000);
 }
