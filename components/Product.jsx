@@ -13,6 +13,7 @@ import "swiper/css/thumbs";
 const Product = () => {
   const [quantity, setQuantity] = useState(1);
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
+  const [imageIndex, setImageIndex] = useState(1);
 
   const handleQuantity = (type) => {
     switch (type) {
@@ -32,96 +33,42 @@ const Product = () => {
       <div className="md:container lg:max-w-screen-xl mx-auto">
         <div className="lg:flex lg:p-16 lg:items-center">
           <div className="lg:w-2/5 flex-shrink-0 lg:mr-16">
-            <Swiper
-              style={{
-                "--swiper-navigation-color": "#fff",
-                "--swiper-pagination-color": "#fff",
-              }}
-              slidesPerView={1}
-              loop={true}
-              spaceBetween={10}
-              navigation={true}
-              thumbs={{ swiper: thumbsSwiper }}
-              modules={[FreeMode, Navigation, Thumbs]}
-              className="w-full relative overflow-hidden"
-            >
-              <SwiperSlide>
+            <div className="w-full relative overflow-hidden">
+              <div className="flex w-full h-full">
                 <Image
-                  className="swiper-slide"
-                  src="/images/image-product-1.jpg"
+                  src={`/images/image-product-${imageIndex}.jpg`}
                   alt="Product image 1"
-                  layout="fill"
+                  width={450}
+                  height={450}
+                  // width="100%"
+                  // height="100%"
+                  // layout="responsive"
+                  // objectFit="contain"
                 />
-              </SwiperSlide>
-              <SwiperSlide>
+              </div>
+            </div>
+
+            <div className="justify-between mt-4 hidden lg:grid lg:grid-cols-4 gap-4 mySwiper">
+              {new Array(4).fill(0).map((value, i) => (
                 <Image
-                  className="swiper-slide"
-                  src="/images/image-product-2.jpg"
-                  alt="Product image 1"
-                  layout="fill"
+                  key={i}
+                  className={
+                    "swiper-thumb swiper-slide " +
+                    (i + 1 === imageIndex ? "swiper-slide-active" : "")
+                  }
+                  onMouseEnter={() => {
+                    console.log(i + 1, imageIndex);
+                    setImageIndex(i + 1);
+                  }}
+                  src={`/images/image-product-${i + 1}.jpg`}
+                  alt={`Product image thumbnail ${i + 1}`}
+                  width="100%"
+                  height="100%"
+                  layout="responsive"
+                  objectFit="contain"
                 />
-              </SwiperSlide>
-              <SwiperSlide>
-                <Image
-                  className="swiper-slide"
-                  src="/images/image-product-3.jpg"
-                  alt="Product image 1"
-                  layout="fill"
-                />
-              </SwiperSlide>
-              <SwiperSlide>
-                <Image
-                  className="swiper-slide"
-                  src="/images/image-product-4.jpg"
-                  alt="Product image 1"
-                  layout="fill"
-                />
-              </SwiperSlide>
-            </Swiper>
-            <Swiper
-              onSwiper={setThumbsSwiper}
-              modules={[FreeMode, Navigation, Thumbs]}
-              slidesPerView={4}
-              freeMode={true}
-              loop={true}
-              watchSlidesProgress
-              spaceBetween={10}
-              className="mySwiper justify-between mt-4 hidden lg:grid lg:grid-cols-4 gap-4"
-            >
-              <SwiperSlide>
-                <Image
-                  className="swiper-thumb"
-                  src="/images/image-product-1.jpg"
-                  alt="Product image thumbnail 1"
-                  layout="fill"
-                  objectFit="cover"
-                />
-              </SwiperSlide>
-              <SwiperSlide>
-                <Image
-                  className="swiper-thumb"
-                  src="/images/image-product-2.jpg"
-                  alt="Product image thumbnail 1"
-                  layout="fill"
-                />
-              </SwiperSlide>
-              <SwiperSlide>
-                <Image
-                  className="swiper-thumb"
-                  src="/images/image-product-3.jpg"
-                  alt="Product image thumbnail 1"
-                  layout="fill"
-                />
-              </SwiperSlide>
-              <SwiperSlide>
-                <Image
-                  className="swiper-thumb"
-                  src="/images/image-product-4.jpg"
-                  alt="Product image thumbnail 1"
-                  layout="fill"
-                />
-              </SwiperSlide>
-            </Swiper>
+              ))}
+            </div>
           </div>
           <div className="px-4 mt-8 lg:ml-8">
             <h2 className="text-orange-700 uppercase text-xs font-bold tracking-widest">
@@ -132,8 +79,8 @@ const Product = () => {
             </h1>
             <p className="text-gray-600 mt-2">
               These low-profile sneakers are your perfect casual wear companion.
-              Featuring a durable rubber outer sole, they&CloseCurlyQuote;ll
-              withstand everything the weather can offer.
+              Featuring a durable rubber outer sole, they&#8217;ll withstand
+              everything the weather can offer.
             </p>
             <div className="flex items-center mt-4 md:block">
               <span className="text-2xl font-extrabold">$125.00</span>
@@ -148,7 +95,7 @@ const Product = () => {
               <div className="flex items-stretch bg-gray-100 rounded-lg mt-6 md:mr-6">
                 <button
                   onClick={() => handleQuantity("decrement")}
-                  className="js-qty-minus p-4 text-orange-600 hover:opacity-50 transition"
+                  className=" p-4 text-orange-600 hover:opacity-50 transition"
                 >
                   <i
                     className="bx bx-minus icon-minus"
@@ -167,11 +114,11 @@ const Product = () => {
                   min="1"
                   required
                   readOnly
-                  className="js-qty w-full bg-transparent text-center font-bold text-lg appearance-none ring-orange-400 focus:outline-none focus:ring-2 invalid:ring-2 invalid:ring-red-400"
+                  className=" w-full bg-transparent text-center font-bold text-lg appearance-none ring-orange-400 focus:outline-none focus:ring-2 invalid:ring-2 invalid:ring-red-400"
                 />
                 <button
                   onClick={() => handleQuantity("increment")}
-                  className="js-qty-plus p-4 text-orange-600 hover:opacity-50 transition"
+                  className=" p-4 text-orange-600 hover:opacity-50 transition"
                 >
                   <i
                     className="bx bx-plus icon-plus"
@@ -181,7 +128,7 @@ const Product = () => {
                 </button>
               </div>
               <button
-                className="js-add-to-cart flex w-full h-14 mt-6 items-center justify-center bg-orange-500 text-white rounded-lg shadow-md shadow-orange-200 hover:shadow-xl hover:bg-opacity-50 hover:shadow-orange-100 transition"
+                className="flex w-full h-14 mt-6 items-center justify-center bg-orange-500 text-white rounded-lg shadow-md shadow-orange-200 hover:shadow-xl hover:bg-opacity-50 hover:shadow-orange-100 transition"
                 data-name="Fall Limited Edition Sneakers"
                 data-price="125.00"
               >
