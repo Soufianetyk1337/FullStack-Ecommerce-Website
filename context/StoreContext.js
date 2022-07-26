@@ -33,6 +33,7 @@ const StoreContext = ({ children }) => {
         setTotalQuantities(
             (previousTotalQuantity) => previousTotalQuantity + quantity
         );
+        setQuantity(1)
     };
     const deleteProduct = (product) => {
         const productToDelete = cartItems.find((item) => item._id === product._id);
