@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React, { useContext, useState } from "react";
 import { Store } from "../../context/StoreContext";
 import { calculateDiscount, formatter } from "../../helpers";
@@ -71,8 +72,7 @@ const ProductDetails = ({ product }) => {
                                 className=" p-4 text-orange-600 hover:opacity-50 transition"
                             >
                                 <i
-                                    className="bx bx-minus icon-minus"
-                                    style={{ fontWeight: "bold", fontSize: "21px" }}
+                                    className="bx bx-minus icon-minus text-xl font-bold"
                                 />
                                 <span className="sr-only">Minus</span>
                             </button>
@@ -94,14 +94,13 @@ const ProductDetails = ({ product }) => {
                                 className=" p-4 text-orange-600 hover:opacity-50 transition"
                             >
                                 <i
-                                    className="bx bx-plus icon-plus"
-                                    style={{ fontWeight: "bold", fontSize: "21px" }}
+                                    className="bx bx-plus icon-plus text-xl font-bold"
                                 />
                                 <span className="sr-only">Plus</span>
                             </button>
                         </div>
                         <button
-                            onClick={addProduct}
+                            onClick={() => addProduct(product, quantity)}
                             className=" flex w-full h-14 mt-6 items-center justify-center bg-orange-500 text-white rounded-lg shadow-md shadow-orange-200 hover:shadow-xl hover:bg-opacity-50 hover:shadow-orange-100 transition"
                             data-name="Fall Limited Edition Sneakers"
                             data-price={
