@@ -5,7 +5,12 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      visibility: ["group-hover"],
+      gridTemplateColumns: {
+        'auto-fit-220': 'repeat(auto-fit, minmax(220px, 1fr))',
+      },
+    },
   },
   plugins: [],
 }
