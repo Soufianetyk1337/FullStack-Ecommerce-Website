@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Toaster } from 'react-hot-toast';
 import Layout from '../containers/Layout'
 import StoreContext from '../context/StoreContext'
 import '../styles/globals.css'
@@ -24,6 +25,7 @@ function MyApp({ Component, pageProps }) {
     <StoreContext>
       <SafeHydrate>
         <Layout>
+          <Toaster />
           <Component {...pageProps} />
         </Layout>
       </SafeHydrate>
