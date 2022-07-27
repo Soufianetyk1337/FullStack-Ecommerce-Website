@@ -1,6 +1,8 @@
 /* eslint-disable no-unused-vars */
 import React, { createContext, useState } from "react";
+import toast from "react-hot-toast";
 import { Product } from "../components";
+import { runCelebrationConfetti } from "../helpers";
 export const Store = createContext();
 
 const StoreContext = ({ children }) => {
@@ -34,6 +36,7 @@ const StoreContext = ({ children }) => {
             (previousTotalQuantity) => previousTotalQuantity + quantity
         );
         setQuantity(1)
+        toast.success(`${quantity} ${product.name.split(" ")[0]} Added to your cart`);
     };
     const deleteProduct = (product) => {
         const productToDelete = cartItems.find((item) => item._id === product._id);

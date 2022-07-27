@@ -16,9 +16,11 @@
     "@sanity/image-url": "^1.0.1",
     "@stripe/stripe-js": "^1.32.0",
     "boxicons": "^2.1.2",
+    "canvas-confetti": "^1.5.1",
     "next": "12.2.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-hot-toast": "^2.3.0",
     "stripe": "^9.15.0",
     "swiper": "^8.3.1"
   },
