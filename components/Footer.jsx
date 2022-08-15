@@ -1,9 +1,8 @@
-/* eslint-disable @next/next/no-img-element */
 import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="container lg:w-[1200px] mx-auto mt-8 mb-8 text-mercury">
+    <footer className="l-container text-mercury">
       <div className="flex__div flex items-center justify-between mb-4 ">
         <div className="image__container w-24">
           <a
