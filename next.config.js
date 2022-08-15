@@ -7,7 +7,8 @@ const nextConfig = {
     STIPE_PUBLISHABLE_KEY: process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY,
   },
   images: {
-    domains: ["cdn.sanity.io"]
+    domains: ["cdn.sanity.io"],
+    formats: ['image/webp'],
   }
 }
 

@@ -12,5 +12,7 @@
         "ecmaVersion": "latest",
         "sourceType": "module"
     },
-    "rules": {}
+    "rules": {
+        "@next/next/no-img-element": "off"
+    }
 }

@@ -2,10 +2,12 @@ import sanityClient from '@sanity/client'
 import imageUrlBuilder from '@sanity/image-url'
 
 export const clientSanity = sanityClient({
-    projectId: '2minkm93', // you can find this in sanity.json
-    dataset: 'production', // or the name you chose in step 1
-    useCdn: true, // `false` if you want to ensure fresh data
-    apiVersion: '2022-06-20'
+    projectId: '2minkm93',
+    dataset: 'production',
+    useCdn: true,
+    apiVersion: '2022-06-20',
+    token: process.env.NEXT_PUBLIC_SANITY_TOKEN
+
 })
 
 const builder = imageUrlBuilder(clientSanity);

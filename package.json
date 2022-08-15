@@ -9,7 +9,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "find:unused": "next-unused"
   },
   "dependencies": {
     "@sanity/client": "^3.3.2",
@@ -18,11 +19,13 @@
     "boxicons": "^2.1.2",
     "canvas-confetti": "^1.5.1",
     "next": "12.2.2",
+    "nodemailer": "^6.7.7",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-hot-toast": "^2.3.0",
+    "scrollreveal": "^4.0.9",
     "stripe": "^9.15.0",
-    "swiper": "^8.3.1"
+    "swiper": "^8.3.2"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.7",
@@ -30,7 +33,9 @@
     "eslint-config-next": "12.2.2",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-react": "^7.30.1",
+    "next-unused": "^0.0.6",
     "postcss": "^8.4.14",
+    "postcss-nesting": "^10.1.10",
     "tailwindcss": "^3.1.6"
   }
 }
