@@ -1,9 +1,8 @@
 import { useEffect, useState } from 'react';
 import { Toaster } from 'react-hot-toast';
-import Layout from '../containers/Layout'
 import StoreContext from '../context/StoreContext'
 import '../styles/globals.css'
-
+import Layout from './../containers/Layout'
 function SafeHydrate({ children }) {
   return (
     <div>
@@ -24,8 +23,8 @@ function MyApp({ Component, pageProps }) {
   return (
     <StoreContext>
       <SafeHydrate>
-        <Layout>
-          <Toaster />
+        <Layout >
+          <Toaster containerClassName='toast' />
           <Component {...pageProps} />
         </Layout>
       </SafeHydrate>

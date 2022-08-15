@@ -1,8 +1,5 @@
-/* eslint-disable no-unused-vars */
 import React, { createContext, useState } from "react";
 import toast from "react-hot-toast";
-import { Product } from "../components";
-import { runCelebrationConfetti } from "../helpers";
 export const Store = createContext();
 
 const StoreContext = ({ children }) => {
@@ -64,7 +61,6 @@ const StoreContext = ({ children }) => {
     };
     const changeCartItemsQuantity = (id, type) => {
         const productById = cartItems.find((item) => item._id === id);
-        const indexOfProduct = cartItems.indexOf((product) => product._id === id);
         const updatedCartItems = cartItems.filter((item) => item._id !== id);
         if (type === "increment") {
             setCartItems([
