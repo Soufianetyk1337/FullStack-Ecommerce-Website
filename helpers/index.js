@@ -1,4 +1,6 @@
 import confetti from 'canvas-confetti';
+import React from 'react';
+import Star from '../components/Star';
 
 export const formatProductName = (name) =>
     name?.toLowerCase().replace(/\s+/g, "-").slice(0, 96);
@@ -40,3 +42,44 @@ export const runCelebrationConfetti = () => {
         confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 } }));
     }, 250);
 }
+
+
+export const averageRatingToStars = (averageRating, starIndex) => {
+    let starElements = [];
+    if (averageRating > 0) {
+        let newRating = averageRating * 10;
+
+        for (let i = 0; i < 5; i++) {
+            if (newRating > 0) {
+                starElements.push(
+                    <Star
+                        height="16px"
+                        width="16px"
+                        classes="mr-2"
+                        fillColorOffset={newRating > 10 ? 100 : newRating * 10}
+                        fillColor="rgba(248,102,87,100)"
+                        emptyColor="#FFCF9F"
+                        index={(i + 1) * 5 + (starIndex + 1)}
+                    />
+                );
+                newRating -= 10;
+
+            } else {
+                starElements.push(
+                    <Star
+                        height="16px"
+                        width="16px"
+                        classes="mr-2"
+                        fillColorOffset={0}
+                        fillColor="rgba(248,102,87,100)"
+                        emptyColor="#FBDCBC"
+                        index={(i + 1) * 5 + (starIndex + 1)}
+
+                    />
+                );
+            }
+        }
+
+    }
+    return React.createElement(React.Fragment, {}, ...starElements);
+};
