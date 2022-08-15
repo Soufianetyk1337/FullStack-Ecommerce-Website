@@ -12,19 +12,30 @@ const banner = {
                 hotspot: true,
             },
         },
+
         {
             name: 'product',
             title: 'Product',
             type: 'string',
         },
         {
-            name: 'action',
-            title: 'Action',
+            name: 'heading_title',
+            title: 'Heading_title',
             type: 'string',
+        },
+        {
+            name: 'year',
+            title: 'Year',
+            type: 'number',
         },
         {
             name: 'description',
             title: 'Description',
+            type: 'string',
+        },
+        {
+            name: 'action',
+            title: 'Action',
             type: 'string',
         },
         {

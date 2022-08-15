@@ -1,6 +1,6 @@
-const product = {
-    name: 'product',
-    title: 'Product',
+const about = {
+    name: 'about',
+    title: 'About',
     type: 'document',
     fields: [
         {
@@ -10,27 +10,12 @@ const product = {
             of: [{ type: 'image' }],
             options: {
                 hotspot: true,
-            }
+            },
         },
         {
-            name: 'description',
-            title: 'Description',
+            name: 'product',
+            title: 'Product',
             type: 'string',
-        },
-        {
-            name: 'company',
-            title: 'Company',
-            type: 'string',
-        },
-        {
-            name: 'name',
-            title: 'Name',
-            type: 'string',
-        },
-        {
-            name: 'price',
-            title: 'Price',
-            type: 'number',
         },
         {
             name: 'discount',
@@ -38,16 +23,37 @@ const product = {
             type: 'number',
         },
         {
-            name: 'average_rating',
-            title: 'Average_rating',
-            type: 'number',
+            name: 'section',
+            title: 'Section',
+            type: 'string',
+        },
+        {
+            name: 'headline',
+            title: 'Headline',
+            type: 'string',
+        },
+
+        {
+            name: 'action',
+            title: 'Action',
+            type: 'string',
+        },
+        {
+            name: 'description_1',
+            title: 'Description_1',
+            type: 'string',
+        },
+        {
+            name: 'description_2',
+            title: 'Description_2',
+            type: 'string',
         },
         {
             name: 'slug',
             type: 'slug',
             title: 'Slug',
             options: {
-                source: 'name',
+                source: 'product',
                 maxLength: 96,
                 slugify: input => input
                     .toLowerCase()
@@ -55,8 +61,9 @@ const product = {
                     .slice(0, 96)
             }
         },
-    ]
+    ],
+};
 
-}
 
-export default product
+
+export default about;
