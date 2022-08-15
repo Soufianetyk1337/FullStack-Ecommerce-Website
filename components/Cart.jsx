@@ -1,5 +1,3 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable @next/next/no-img-element */
 import Image from "next/image";
 import React, { useContext } from "react";
 import { Store } from "../context/StoreContext";
@@ -9,12 +7,9 @@ import getStripe from "../libraries/getStripe";
 import VisaCard from "./VisaCard";
 
 const Cart = () => {
-  const { setToggleShowCart, toggleShowCart, cartItems, deleteProduct } =
-    useContext(Store);
-  console.log(cartItems);
+  const { cartItems, deleteProduct } = useContext(Store);
   const handleCheckout = async (event) => {
     event.preventDefault();
-    console.log("Checkout");
     const stripe = await getStripe();
 
     const response = await fetch("/api/checkout_sessions", {
@@ -58,9 +53,11 @@ const Cart = () => {
               cartItems.map((item) => (
                 <div className=" flex items-center mb-4" key={item._id}>
                   <>
-                    <div className="w-16 h-auto rounded-lg mr-4">
-                      <img
-                        src={urlFor(item.image && item.image[0])}
+                    <div className="w-16 h-16 rounded-lg mr-4 relative">
+                      <Image
+                        src={urlFor(item.image && item.image[0]).url()}
+                        layout="fill"
+                        loading="lazy"
                         alt={item.name}
                       />
                     </div>
@@ -89,7 +86,7 @@ const Cart = () => {
           </>
           <button
             onClick={handleCheckout}
-            className="w-full h-14 bg-orange-600 text-white font-medium rounded-lg order-1"
+            className="w-full h-14 bg-burnt-sienna text-white font-medium rounded-lg order-1"
           >
             Checkout
           </button>
