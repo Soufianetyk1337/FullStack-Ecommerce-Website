@@ -130,10 +130,7 @@ const Navbar = () => {
             {totalQuantities}
           </span>
         </button>
-        {/* <button className="text-gray-600 md:hidden">
-          <i className="bx bx-menu text-2xl font-bold text-white"></i>
-          <span className="sr-only">Menu</span>
-        </button> */}
+
         {toggleShowCart && <Cart />}
       </nav>
     </header>
@@ -141,7 +138,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
-// <div className="md:container lg:max-w-screen-xl mx-auto md:border-b md:relative">
-// <div className="flex items-center justify-between h-20 md:items-center">
-// mr-auto ml-4 -mt-1.5 md:mr-4 md:py-12

@@ -98,11 +98,6 @@ const Reviews = ({ reviewsData }) => {
                     <span className="text-sm leading-none text-burnt-sienna">
                       ({review.stars})
                     </span>
-
-                    {/* <Star height="16px" width="16px" classes="mr-2" />
-                    <Star height="16px" width="16px" classes="mr-2" />
-                    <Star height="16px" width="16px" classes="mr-2" />
-                    <Star height="16px" width="16px" classes="mr-2" /> */}
                   </div>
                   <h3 className="customer text-mercury tracking-[0.075rem] font-semibold">
                     {review.fullname}
