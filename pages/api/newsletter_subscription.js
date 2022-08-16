@@ -1,13 +1,15 @@
 import nodemailer from "nodemailer";
+import { htmlEmailTemplate } from "../../helpers";
 
 export default async function handler(req, res) {
     try {
         const email = req.body;
+        const newsletterEmail = htmlEmailTemplate();
         const mailOptions = {
             from: '"Nike" <john-doe@gmail.com>',
             to: email,
-            subject: "Newsletter subscription",
-            html: "<h1>Success</h1>",
+            subject: "Nike Store Newsletter subscription",
+            html: newsletterEmail,
         };
         const transporter = nodemailer.createTransport({
             host: "smtp.gmail.com",
