@@ -76,11 +76,13 @@ const PopularProducts = ({ products }) => {
           }}
           watchSlidesProgress
         >
-          {products.map((product) => (
-            <SwiperSlide key={product._id}>
-              <PopularProduct product={product} />
-            </SwiperSlide>
-          ))}
+          {products
+            .sort((p1, p2) => p2.average_rating - p1.average_rating)
+            .map((product) => (
+              <SwiperSlide key={product._id}>
+                <PopularProduct product={product} />
+              </SwiperSlide>
+            ))}
         </Swiper>
         <div className="popular-products-swiper-pagination swiper-pagination mt-0 flex justify-center items-center l-container static"></div>
       </div>
