@@ -20,7 +20,6 @@ const Reviews = ({ reviewsData }) => {
           distance: "60px",
           duration: 1500,
           delay: 700,
-          reset: true,
         });
       }
     }

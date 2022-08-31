@@ -15,14 +15,12 @@ const Hero = ({ heroData }) => {
           distance: "60px",
           duration: 1500,
           delay: 400,
-          reset: true,
         });
         ScrollReveal().reveal(heroImageRef.current, {
           origin: "right",
           distance: "60px",
           duration: 1500,
           delay: 400,
-          reset: true,
         });
       }
     }

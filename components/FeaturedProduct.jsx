@@ -23,14 +23,12 @@ const FeaturedProduct = ({ aboutData }) => {
           distance: "60px",
           duration: 1500,
           delay: 500,
-          reset: true,
         });
         ScrollReveal1().reveal(featuredImageRef.current, {
           origin: "left",
           distance: "60px",
           duration: 1500,
           delay: 500,
-          reset: true,
         });
       }
     }

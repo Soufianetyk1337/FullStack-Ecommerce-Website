@@ -21,7 +21,6 @@ const PopularProducts = ({ products }) => {
           distance: "60px",
           duration: 1500,
           delay: 600,
-          reset: true,
         });
       }
     }
